@@ -188,25 +188,25 @@ function GetAcc(){
 					var node = document.createElement('option');
 					var text = JS_obj[i];
 					if(text === 'RIC-1' || text === 'RIC-4' || text === 'RIC-6'){
-						node.textContent = 'Red Ivory Chalet (Sleeps 4 - 2 rooms @R490.00 pppn)';
+						node.textContent = 'Red Ivory Chalet (Slaap 4 - 2 kamers @R490.00 pppn)';
 						node.value = JS_obj[i];
 					} else if (text === 'RIC-2' || text === 'RIC-3' || text === 'RIC-5'){
-						node.textContent = 'Red Ivory Chalet (Sleeps 4 - 1 room @R490.00 pppn)';
+						node.textContent = 'Red Ivory Chalet (Slaap 4 - 1 kamer @R490.00 pppn)';
 						node.value = JS_obj[i];
 					} else if (text === 'BUN-1' || text === 'BUN-2' || text === 'BUN-3' || text === 'BUN-4' || text === 'BUN-5' || text === 'BUN-6'){
-						node.textContent = 'Bungalows (Sleeps 4 @R390.00 pppn)';
+						node.textContent = 'Bungalows (Slaap 4 @R390.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'BUN-7' || text === 'BUN-8' || text === 'BUN-9'){
-						node.textContent = 'Bungalows (Sleeps 2 @R390.00 pppn)';
+						node.textContent = 'Bungalows (Slaap 2 @R390.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'SAF-1' || text === 'SAF-2' || text === 'SAF-3' || text === 'SAF-4' || text === 'SAF-5' ){
-						node.textContent = 'Safari tent (Sleeps 2 @R290.00 pppn)';
+						node.textContent = 'Safari tent (Slaap 2 @R290.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'LR8-1' || text === 'LR8-2' || text === 'LR8-3' || text === 'LR8-4' || text === 'LR8-5' || text === 'LR8-6' || text === 'LR8-7' || text === 'LR8-8'){
-						node.textContent = 'Loft room Single Bed (Sleeps 8 - bunk beds @R240.00 pppn)';
+						node.textContent = 'Loft room (Slaap 8 - enkel stapel bed @R240.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'LR-1' ){
-						node.textContent = 'Loft room (Sleeps 4 @R240.00 pppn)';
+						node.textContent = 'Loft room (Slaap 4 @R240.00 pppn)';
 						node.value = JS_obj[i];
 					} else {
 						node.textContent = JS_obj[i];
