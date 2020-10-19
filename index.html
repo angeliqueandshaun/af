@@ -181,22 +181,7 @@
 			<div class="imageContainer">
 				<img class="Fern" src="Images/fern.png" alt="Protea">
 			</div>
-		</section>
-		
-		<section> <!-- Block for Language Selection -->
-			<div id="Language-Modal" class="Modal">
-				<div class="modal-content">
-					<div class='LangContainer'>
-						<!-- <span onclick="hideModal('Lang-Modal')" class="close">&times;</span> -->
-						<div class="Lang">
-							<div style="font-size:50px;">Kies asb jou </br>verkose taal:</div>
-							<button class='LangSelect' onclick="setCookie()">English</button>
-							<button class='LangSelect'><a href='Wedding-Afrikaans.html'>Afrikaans</a></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		</section>		
 		
 		<section> <!-- RSVP Popup box -->
 			<div id="RSVP-Modal" class="Modal">
@@ -283,12 +268,25 @@
 								</p>
 																								
 								<p>'n Ligte ontbyt sal beskikbaar wees teen R55.00 per persoon per dag.  Wil jy die ontbyt tot jou bespreking voeg? </br>
+								<ul>
+										<li>Fruit juice</li>
+										<li>Tea, Coffee & Rusks</li> 
+										<li>Yoghurt</li>
+										<li>Jams</li>
+										<li>Butter</li>
+										<li>Grated cheese</li>
+										<li>Pancakes with cinnamon sugar, lemon juice & syrup</li>
+									</ul>
+									</br>
+									
 									<select id='BreakfastSelect'>
 										<option value='light'>Ja</option>
+										<option value='SC'>Ek sal van die selfsorg fasiliteite gebruik maak</option>
 										<option value='no'>Nee</option>
 									</select>
 								</p>
 								
+								<button type='button' onclick='AccBack()'>Back</button>
 								<button id='SubmitButton' type='submit'>Next</button>
 								<p id='SubmitLabel'></p>
 								
