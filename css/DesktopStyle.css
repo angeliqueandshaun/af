@@ -94,7 +94,7 @@ body{
 	color: black;
 }
 
-#LangSelect 
+#LangSelect {
 	display: none;
 	z-index: 99;
 	position: fixed;
