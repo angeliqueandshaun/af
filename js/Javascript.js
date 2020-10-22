@@ -179,7 +179,7 @@ function GetAcc(){
 	HTTP.onreadystatechange = function() {
 		document.getElementById('Accresponse').innerHTML += '...';
 		if(HTTP.readyState === 4 && HTTP.status === 200) {
-			document.getElementById('Accresponse').innerHTML = 'Please select the accommodation you would like to book';
+			document.getElementById('Accresponse').innerHTML = 'Kies asb die akkommodasie wat jy wil bespreek';
 			var JS_obj = JSON.parse(HTTP.response);					
 			var myLength = JS_obj.length;
 			if(myLength > 0){						
