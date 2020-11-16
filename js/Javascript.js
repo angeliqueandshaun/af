@@ -171,7 +171,7 @@ function GetAcc(){
 	const Url = 'https://script.google.com/macros/s/AKfycbxNweG_q2HfiY7UHUkn6DbNZJXeERGZvAUBlQTO6rHbYUNb15A/exec';
 	var mySelectList = '<select name:"rooms" id="rooms">';				
 					
-	document.getElementById('Accresponse').innerHTML = 'Wag asb dat ons die beskikbare akkomodasie oproep';
+	document.getElementById('Accresponse').innerHTML = 'Wag asb dat ons die beskikbare verblyf oproep';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', Url, true);
@@ -179,7 +179,7 @@ function GetAcc(){
 	HTTP.onreadystatechange = function() {
 		document.getElementById('Accresponse').innerHTML += '...';
 		if(HTTP.readyState === 4 && HTTP.status === 200) {
-			document.getElementById('Accresponse').innerHTML = 'Kies asb die akkommodasie wat jy wil bespreek';
+			document.getElementById('Accresponse').innerHTML = 'Kies asb die verblyf wat jy wil bespreek';
 			var JS_obj = JSON.parse(HTTP.response);					
 			var myLength = JS_obj.length;
 			if(myLength > 0){						
