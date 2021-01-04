@@ -8,7 +8,7 @@ function setCookie(value){
 	
 	if(value == 'eng'){
 		document.cookie = 'Language=English;'+ expires + '; path=/';
-		window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/en/index.html");
+		window.location.replace("https://angeliqueandshaun.github.io/en/index.html");
 	}
 	
 	if(value == 'afr'){
@@ -40,13 +40,13 @@ function checkCookie(){
 	var selectedLang = readCookie();	
 	
 	if( selectedLang === "=Afrikaans" ){
-		if(url === "file:///C:/Users/shaun/OneDrive/Documents/GitHub/en/index.html"){
-			window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/af/index.html");
+		if(url === "https://angeliqueandshaun.github.io/en/index.html"){
+			window.location.replace("https://angeliqueandshaun.github.io/af/index.html");
 			
 		}	
 	}else if( selectedLang == "=English"){
-		if(url == "file:///C:/Users/shaun/OneDrive/Documents/GitHub/af/index.html"){
-			window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/en/index.html");
+		if(url == "https://angeliqueandshaun.github.io/af/index.html"){
+			window.location.replace("https://angeliqueandshaun.github.io/en/index.html");
 			
 		}	
 	}
