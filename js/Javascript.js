@@ -74,7 +74,7 @@ function callServer(){
 		const Url = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress;
 		var myCheckBoxList = '<ul>';				
 						
-		document.getElementById('response').innerHTML = 'Wag asb dat ons jou inligting oproep';
+		document.getElementById('response').innerHTML = 'Wag asb. dat ons jou inligting oproep';
 		
 		HTTP.responseType = 'text';
 		HTTP.open('GET', Url, true);
@@ -85,7 +85,7 @@ function callServer(){
 				var JS_obj = JSON.parse(HTTP.response);
 				var myLength = JS_obj.length;
 				if(myLength === 0){
-					document.getElementById('response').innerHTML = 'E-pos adres nie gevind </br> Gebruik asb die e-pos adres ingedien tydens Onthou die datum.';
+					document.getElementById('response').innerHTML = 'E-pos adres nie gevind </br> Gebruik asb. die e-pos adres ingedien tydens Onthou die datum.';
 				}else{								
 					for(i = 0; i < myLength; i++) {							
 						res.push(JS_obj[i]);
@@ -153,7 +153,7 @@ function Submit(){
 	}
 	
 	URL2 = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress + text + Allergies + Song;
-	document.getElementById('result').innerHTML = 'Wag asb terwyl ons jou besonderhede indien...';
+	document.getElementById('result').innerHTML = 'Wag asb. terwyl ons jou besonderhede indien...';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', URL2, true);
@@ -168,7 +168,7 @@ function Submit(){
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page3').style.display = 'block';
 			}else{
-				document.getElementById('result').innerHTML = 'Ons kan ongelukkig nie jou versoek indien nie. Verfris asb die webblad';
+				document.getElementById('result').innerHTML = 'Ons kan ongelukkig nie jou versoek indien nie. Verfris asb. die webblad';
 			}
 									
 		}
@@ -188,7 +188,7 @@ function GetAcc(){
 	const Url = 'https://script.google.com/macros/s/AKfycbxNweG_q2HfiY7UHUkn6DbNZJXeERGZvAUBlQTO6rHbYUNb15A/exec';
 	var mySelectList = '<select name:"rooms" id="rooms">';				
 					
-	document.getElementById('Accresponse').innerHTML = 'Wag asb dat ons die beskikbare verblyf oproep';
+	document.getElementById('Accresponse').innerHTML = 'Wag asb. dat ons die beskikbare verblyf oproep';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', Url, true);
@@ -196,7 +196,7 @@ function GetAcc(){
 	HTTP.onreadystatechange = function() {
 		document.getElementById('Accresponse').innerHTML += '...';
 		if(HTTP.readyState === 4 && HTTP.status === 200) {
-			document.getElementById('Accresponse').innerHTML = 'Kies asb die verblyf wat jy wil bespreek';
+			document.getElementById('Accresponse').innerHTML = 'Kies asb. die verblyf wat jy wil bespreek';
 			var JS_obj = JSON.parse(HTTP.response);					
 			var myLength = JS_obj.length;
 			if(myLength > 0){						
@@ -342,7 +342,7 @@ function SubmitAcc(){
 		Nights = '&nights=1';
 	}
 	
-	document.getElementById('SubmitLabel').innerHTML = 'Wag asb terwyl ons jou versoek indien';
+	document.getElementById('SubmitLabel').innerHTML = 'Wag asb. terwyl ons jou versoek indien';
 	Url += '?' + EmailAddress + Guest1 + GuestContact + Guest2 + Guest3 + Guest4 + UnitNumber + Date + Nights + Breakfast;
 	//document.getElementById('SubmitLabel').innerHTML = Url;
 	
@@ -359,7 +359,7 @@ function SubmitAcc(){
 				document.getElementById('notify').innerHTML = 'Dankie vir jou versoek. Ons sien uit om jou daar to sien. </br>Kuthaba Bush Lodge sal in kontak wees aangaande jou versoek.</br></br>Let wel dat jou versoek eers afgehandel wees na Kuthaba Bush Lodge betaling ontvang het';					
 				
 			}else {
-				document.getElementById('notify').innerHTML = 'O gedorie.. Iets het verkeerd gegaan. Verfris asb die webblad.</br>Jammer vir die ongerief.';					
+				document.getElementById('notify').innerHTML = 'O gedorie.. Iets het verkeerd gegaan. Verfris asb. die webblad.</br>Jammer vir die ongerief.';					
 			}		
 		
 																			
