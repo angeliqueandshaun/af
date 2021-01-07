@@ -354,7 +354,10 @@ color: #70716c;
 font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
+}
 
+#LANG-Modal{
+display: none;
 }
 
 .LANGContainer{
@@ -362,7 +365,7 @@ color: #70716c;
 font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
-
+text-align: center;
 }
 
 /* The Close Button */
