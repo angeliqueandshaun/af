@@ -198,7 +198,7 @@
 							</form>
 						</div>
 						<div id='page2'>
-							<form action='#' onsubmit='Submit();return false'>
+							<form action='#' onsubmit='CheckSubmittion();return false'>
 								<p>Bevestig asb. wie sal bywoon? (los leeg indien niemand sal bywoon nie)</p>			
 									<div id='list'><ul id='checkboxlist' style="list-style-type:none;"></ul></div>
 									<div><p>Is daar enige allergieë of dieetvereistes?</p><input id='alergy' required></input></div>
@@ -208,8 +208,13 @@
 							</form>
 						</div>
 						<div id='page3'>
-							<p>Dankie!</p>			
+							<p>Dankie!</p></br>
+							<div>To avoid disapointment, please reserve your accommodation below.</div>
+							<button class="Book" onclick="showModal('RES-Modal','RSVP-Modal')">Reservations</button>			
 						</div>
+						<div id='page4'>
+							<p>Dankie!</p></br>							
+						</div>	
 					</div>
 				</div>
 			</div>			

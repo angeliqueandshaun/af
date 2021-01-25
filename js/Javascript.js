@@ -114,6 +114,26 @@ function callServer(){
 		HTTP.send(Url);
 }
 
+function CheckSubmittion(){
+	var listlength = res.length;
+	var attendCheck = 0;
+	
+	for(j = 0; j < listlength; j++){				
+		var myBox = document.getElementById('list'+[j]);
+		if (myBox.checked == true){
+			attendCheck++;
+		}
+	}
+	
+	if(attendCheck > 0){
+		Submit();
+	}else{
+		if(confirm("You have not selected any boxes. Please can you confirm that no-one will be attending?")){
+			Submit();
+		}
+	}
+}
+
 function Submit(){
 	const HTTP = new XMLHttpRequest();				
 	var responsedata = '';
@@ -123,7 +143,6 @@ function Submit(){
 	var URL2 = '';
 	var Allergies = '';
 	var Song = '';
-	
 	
 	if(document.getElementById('alergy').value != ''){
 		Allergies = '&allergy=' + document.getElementById('alergy').value;
@@ -145,30 +164,35 @@ function Submit(){
 		var myBox = document.getElementById('list'+[j]);
 		if (myBox.checked == true){
 			responsedata = '&fname=' + res[j] + '&attend=yes';											
-			text = text + responsedata;											
+			text = text + responsedata;	
 		}else{						
 			responsedata = '&fname=' + res[j] + '&attend=no';
 			text = text + responsedata;												
 		}
-	}
+	}	
 	
 	URL2 = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress + text + Allergies + Song;
-	document.getElementById('result').innerHTML = 'Wag asb. terwyl ons jou besonderhede indien...';
+	document.getElementById('result').innerHTML = 'Please wait while we submit your details...';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', URL2, true);
 	
 	HTTP.onreadystatechange = function() {
 		document.getElementById('response').innerHTML += '...';
+		//document.getElementById('result').innerHTML = URL2;
 		if(HTTP.readyState === 4 && HTTP.status === 200) {						
 			//var JS_obj = JSON.parse(HTTP.response);
 			var returnText = HTTP.response;
-			if(returnText === 'executed'){
+			if(returnText === 'true'){
 				document.getElementById('page1').style.display = 'none';
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page3').style.display = 'block';
+			}else if(returnText === 'false'){
+				document.getElementById('page1').style.display = 'none';
+				document.getElementById('page2').style.display = 'none';
+				document.getElementById('page4').style.display = 'block';
 			}else{
-				document.getElementById('result').innerHTML = 'Ons kan ongelukkig nie jou versoek indien nie. Verfris asb. die webblad';
+				document.getElementById('result').innerHTML = 'We were unable to submit your request.  Please refresh the page and try again';
 			}
 									
 		}
