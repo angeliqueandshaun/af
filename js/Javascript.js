@@ -77,7 +77,7 @@ function callServer(){
 		const Url = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress;
 		var myCheckBoxList = '<ul>';				
 						
-		document.getElementById('response').innerHTML = 'Wag asb. dat ons jou inligting oproep';
+		document.getElementById('response').innerHTML = 'Wag asseblief dat ons jou inligting oproep';
 		document.getElementById('Loading-Modal').style.display = 'block';
 		
 		HTTP.responseType = 'text';
@@ -90,7 +90,7 @@ function callServer(){
 				var myLength = JS_obj.length;
 				document.getElementById('Loading-Modal').style.display = 'none';
 				if(myLength === 0){
-					document.getElementById('response').innerHTML = 'E-pos adres nie gevind </br> Gebruik asb. die e-pos adres ingedien tydens Onthou die datum.';
+					document.getElementById('response').innerHTML = 'O gedorie.. Iets het verkeerd gegaan.</br> Gebruik asseblief die e-pos adres ingedien tydens Onthou die datum.';
 				}else{								
 					for(i = 0; i < myLength; i++) {							
 						res.push(JS_obj[i]);
