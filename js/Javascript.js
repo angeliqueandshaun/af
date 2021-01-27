@@ -75,6 +75,7 @@ function callServer(){
 		var myCheckBoxList = '<ul>';				
 						
 		document.getElementById('response').innerHTML = 'Wag asb. dat ons jou inligting oproep';
+		document.getElementById('Loading-Modal').style.display = 'block';
 		
 		HTTP.responseType = 'text';
 		HTTP.open('GET', Url, true);
@@ -84,6 +85,7 @@ function callServer(){
 			if(HTTP.readyState === 4 && HTTP.status === 200) {																				
 				var JS_obj = JSON.parse(HTTP.response);
 				var myLength = JS_obj.length;
+				document.getElementById('Loading-Modal').style.display = 'none';
 				if(myLength === 0){
 					document.getElementById('response').innerHTML = 'E-pos adres nie gevind </br> Gebruik asb. die e-pos adres ingedien tydens Onthou die datum.';
 				}else{								
@@ -172,7 +174,8 @@ function Submit(){
 	}	
 	
 	URL2 = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress + text + Allergies + Song;
-	document.getElementById('result').innerHTML = 'Please wait while we submit your details...';
+	document.getElementById('result').innerHTML = 'Wag asseblief terwyl ons jou besonderhede indien...';
+	document.getElementById('Loading-Modal').style.display = 'block';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', URL2, true);
@@ -187,11 +190,14 @@ function Submit(){
 				document.getElementById('page1').style.display = 'none';
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page3').style.display = 'block';
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}else if(returnText === 'false'){
 				document.getElementById('page1').style.display = 'none';
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page4').style.display = 'block';
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}else{
+				document.getElementById('Loading-Modal').style.display = 'none';
 				document.getElementById('result').innerHTML = 'We were unable to submit your request.  Please refresh the page and try again';
 			}
 									
@@ -212,7 +218,8 @@ function GetAcc(){
 	const Url = 'https://script.google.com/macros/s/AKfycbxNweG_q2HfiY7UHUkn6DbNZJXeERGZvAUBlQTO6rHbYUNb15A/exec';
 	var mySelectList = '<select name:"rooms" id="rooms">';				
 					
-	document.getElementById('Accresponse').innerHTML = 'Wag asb. dat ons die beskikbare verblyf oproep';
+	document.getElementById('Accresponse').innerHTML = 'Wag asseblief dat ons die beskikbare verblyf oproep';
+	document.getElementById('Loading-Modal').style.display = 'block';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', Url, true);
@@ -220,6 +227,7 @@ function GetAcc(){
 	HTTP.onreadystatechange = function() {
 		document.getElementById('Accresponse').innerHTML += '...';
 		if(HTTP.readyState === 4 && HTTP.status === 200) {
+			document.getElementById('Loading-Modal').style.display = 'none';
 			document.getElementById('Accresponse').innerHTML = 'Kies asb. die verblyf wat jy wil bespreek';
 			var JS_obj = JSON.parse(HTTP.response);					
 			var myLength = JS_obj.length;
@@ -370,7 +378,7 @@ function SubmitAcc(){
 	Url += '?' + EmailAddress + Guest1 + GuestContact + Guest2 + Guest3 + Guest4 + UnitNumber + Date + Nights + Breakfast;
 	//document.getElementById('SubmitLabel').innerHTML = Url;
 	
-	
+	document.getElementById('Loading-Modal').style.display = 'block';
 	HTTP2.responseType = 'text';
 	HTTP2.open('GET', Url, true);
 	
@@ -381,10 +389,10 @@ function SubmitAcc(){
 			
 			if(text == 'confirmed'){
 				document.getElementById('notify').innerHTML = 'Dankie vir jou versoek. Ons sien uit om jou daar to sien. </br>Kuthaba Bush Lodge sal in kontak wees aangaande jou versoek.</br></br>Let wel dat jou versoek eers afgehandel wees na Kuthaba Bush Lodge betaling ontvang het';					
-				
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}else {
 				document.getElementById('notify').innerHTML = 'O gedorie.. Iets het verkeerd gegaan. Verfris asb. die webblad.</br>Jammer vir die ongerief.';					
-			}		
+			}	document.getElementById('Loading-Modal').style.display = 'none';	
 		
 																			
 		}
