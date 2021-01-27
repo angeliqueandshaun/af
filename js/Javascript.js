@@ -388,7 +388,7 @@ function SubmitAcc(){
 			var text = HTTP2.response;
 			
 			if(text == 'confirmed'){
-				document.getElementById('notify').innerHTML = 'Dankie vir jou versoek. Ons sien uit om jou daar to sien. </br>Kuthaba Bush Lodge sal in kontak wees aangaande jou versoek.</br></br>Let wel dat jou versoek eers afgehandel wees na Kuthaba Bush Lodge betaling ontvang het';					
+				document.getElementById('notify').innerHTML = 'Dankie vir jou versoek. Ons sien uit om jou daar to sien. </br>Kuthaba Bush Lodge sal in kontak wees nader aan die datum.';					
 				document.getElementById('Loading-Modal').style.display = 'none';
 			}else if(text == 'excluded'){
 				document.getElementById('notify').innerHTML = 'O gedorie.. Iets het verkeerd gegaan. Verfris asb. die webblad.</br>Jammer vir die ongerief.';					
