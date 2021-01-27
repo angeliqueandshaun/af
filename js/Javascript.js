@@ -59,7 +59,10 @@ function ScrollTop(){
 	window.scrollTo(0,0);
 }
 
-function showModal(id){
+function showModal(id,id2){
+	if(id2 != null){
+		document.getElementById(id2).style.display = "none";
+	}
 	document.getElementById(id).style.display = "block";
 }
 		
@@ -388,7 +391,7 @@ function SubmitAcc(){
 			var text = HTTP2.response;
 			
 			if(text == 'confirmed'){
-				document.getElementById('notify').innerHTML = 'Dankie vir jou versoek. Ons sien uit om jou daar to sien. </br>Kuthaba Bush Lodge sal in kontak wees nader aan die datum.';					
+				document.getElementById('notify').innerHTML = 'Dankie vir jou versoek. Ons sien uit om jou daar te sien. </br>Kuthaba Bush Lodge sal in kontak wees nader aan die datum.';					
 				document.getElementById('Loading-Modal').style.display = 'none';
 			}else if(text == 'excluded'){
 				document.getElementById('notify').innerHTML = 'O gedorie.. Iets het verkeerd gegaan. Verfris asb. die webblad.</br>Jammer vir die ongerief.';					
