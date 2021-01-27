@@ -128,7 +128,7 @@ function CheckSubmittion(){
 	if(attendCheck > 0){
 		Submit();
 	}else{
-		if(confirm("You have not selected any boxes. Please can you confirm that no-one will be attending?")){
+		if(confirm("Jy het geen keuse gemaak nie. Kan jy asseblief bevestig dat niemand gaan bywoon nie?")){
 			Submit();
 		}
 	}
